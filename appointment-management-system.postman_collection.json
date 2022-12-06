@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "04bf042c-8588-4213-b5f9-0427ae49da32",
+		"name": "appointment-management-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17778487"
+	},
+	"item": [
+		{
+			"name": "add patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"patientName\":\"Mohamed Fayez Taha\",\r\n\"mobileNumber\":\"01019670211\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/appointment/v1/add-patient",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointment",
+						"v1",
+						"add-patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"appointmentDate\":\"2022-12-29T13:34:00.000\",\r\n\"patientId\":\"1\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/appointment/v1/add-appointment",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointment",
+						"v1",
+						"add-appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel appointment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"appointmentId\":\"1\",\r\n\"cancellationReason\":\"NO_SHOW\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/appointment/v1/cancel-appointment",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointment",
+						"v1",
+						"cancel-appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter appointment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"fromDate\":\"2022-11-01T13:34:00.000\",\r\n\"toDate\":\"2022-11-01T13:34:00.000\",\r\n\"patientName\":\"Mohamed\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/appointment/v1/filter-appointments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointment",
+						"v1",
+						"filter-appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "today appointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/appointment/v1/today-appointments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointment",
+						"v1",
+						"today-appointments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

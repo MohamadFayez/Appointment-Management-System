@@ -1,0 +1,27 @@
+app:
+  config:
+    appointment-management:
+      base-uri: /appointment
+      api:
+         today-appointments: /v1/today-appointments
+         add-appointment: /v1/add-appointment
+         cancel-appointment: /v1/cancel-appointment
+         filter-appointments: /v1/filter-appointments
+         add-patient: /v1/add-patient
+spring:
+  h2.console.enabled: true
+  ql.init.schema-locations: classpath:db/scripts.sql
+  datasource:
+    url: jdbc:h2:mem:db
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate.ddl-auto: update
+server:
+  port: 8080
+  error.include-message: always
+springdoc:
+  packagesToScan: com.stc.appointment
+  operations-sorter: alpha
